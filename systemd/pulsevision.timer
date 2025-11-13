@@ -1,0 +1,14 @@
+[Unit]
+Description=Pulsevision timer
+After=network.target
+
+[Timer]
+#Run every 30mins
+OnUnitActiveSec=1800
+OnBootSec=30
+AccuracySec=1
+Unit=pulsevision.service
+
+[Install]
+WantedBy=timers.target
+

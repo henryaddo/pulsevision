@@ -1,0 +1,17 @@
+[Unit]
+Description=Pulsevision Dashboard updater
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/pulsevision/scripts
+Environment=PATH=/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/usr/bin/bash /opt/pulsevision/scripts/pulsevision.sh
+StandardError=journal
+StandardOutput=journal
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
+
